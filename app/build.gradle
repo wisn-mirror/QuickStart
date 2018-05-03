@@ -39,23 +39,22 @@ android {
 //            applicationIdSuffix ".debug"
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            matchingFallbacks = ['release', 'debug']
         }
         debug {
             minifyEnabled false
 //            applicationIdSuffix ".debug"
-//            signingConfig signingConfigs.release
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
     androidTestImplementation supportDependencies.androidTestespresso
-
     implementation supportDependencies.constraint
     implementation supportDependencies.annotations
     implementation supportDependencies.appCompat
@@ -63,7 +62,8 @@ dependencies {
     implementation thirdDependencies.bugly
     implementation thirdDependencies.walle
     implementation thirdDependencies.multidex
-
+    implementation thirdDependencies.bugly
+    implementation project(':library')
 }
 walle {
     // 指定渠道包的输出路径

@@ -1,3 +1,4 @@
+git config --global http.postBuffer 1048576000
 
 WORKSPACE=/Users/mac/Desktop/githubworkspace/QuickStart/app
 jgPath=/Users/mac/Desktop/tool/360jiagu/jiagu
