@@ -41,6 +41,7 @@ ext {
     supportLibrary = "27.0.2"
 
     supportDependencies = [
+            supportv4          : "com.android.support:support-v4:${supportLibrary}",
             appCompat          : "com.android.support:appcompat-v7:${supportLibrary}",
             recyclerview       : "com.android.support:recyclerview-v7:${supportLibrary}",
             design             : "com.android.support:design:${supportLibrary}",

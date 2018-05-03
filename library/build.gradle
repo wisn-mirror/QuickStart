@@ -26,8 +26,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compile thirdDependencies.okhttp
+    compile supportDependencies.appCompat
     compile thirdDependencies.gson
     compile thirdDependencies.rxjava
+    compile 'com.android.support:support-v4:23.2.0'
+
+//    compile thirdDependencies.supportv4
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
     androidTestImplementation supportDependencies.androidTestespresso
