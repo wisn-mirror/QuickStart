@@ -1,15 +1,12 @@
+
 package com.laiyifen.library.view.swipebacklayout;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-/**
- * Created by Wisn on 2018/5/3 下午6:02.
- */
 
-public class SwipeBackActivity extends Activity implements SwipeBackActivityBase {
+public class SwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
 
     @Override
@@ -48,6 +45,4 @@ public class SwipeBackActivity extends Activity implements SwipeBackActivityBase
         Utils.convertActivityToTranslucent(this);
         getSwipeBackLayout().scrollToFinishActivity();
     }
-
 }
-

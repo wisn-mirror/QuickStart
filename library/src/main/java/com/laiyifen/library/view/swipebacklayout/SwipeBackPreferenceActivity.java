@@ -2,10 +2,11 @@
 package com.laiyifen.library.view.swipebacklayout;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.preference.PreferenceActivity;
 import android.view.View;
 
-public class SwipeBackPreferenceActivity extends AppCompatActivity implements SwipeBackActivityBase {
+
+public class SwipeBackPreferenceActivity extends PreferenceActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
 
     @Override
