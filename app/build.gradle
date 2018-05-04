@@ -30,19 +30,19 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         edu {
-            minifyEnabled false
+            minifyEnabled true
 //            applicationIdSuffix ".debug"
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             matchingFallbacks = ['release', 'debug']
         }
         debug {
-            minifyEnabled false
+            minifyEnabled true
 //            applicationIdSuffix ".debug"
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

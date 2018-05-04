@@ -12,7 +12,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        CrashReport.initCrashReport(getApplicationContext(), "f482351318", false);
+        CrashReport.initCrashReport(getApplicationContext(), "8c212d3996", false);
 
     }
 }
