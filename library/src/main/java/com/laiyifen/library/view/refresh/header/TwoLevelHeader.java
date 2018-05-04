@@ -9,6 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.laiyifen.library.R;
+import com.laiyifen.library.view.refresh.api.OnTwoLevelListener;
+import com.laiyifen.library.view.refresh.api.RefreshHeader;
+import com.laiyifen.library.view.refresh.api.RefreshKernel;
+import com.laiyifen.library.view.refresh.api.RefreshLayout;
+import com.laiyifen.library.view.refresh.constant.RefreshState;
+import com.laiyifen.library.view.refresh.constant.SpinnerStyle;
+import com.laiyifen.library.view.refresh.impl.RefreshHeaderWrapper;
+import com.laiyifen.library.view.refresh.internal.InternalAbstract;
+
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 

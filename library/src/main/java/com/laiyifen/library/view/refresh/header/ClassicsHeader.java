@@ -18,6 +18,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+import com.laiyifen.library.R;
+import com.laiyifen.library.view.refresh.api.RefreshHeader;
+import com.laiyifen.library.view.refresh.api.RefreshLayout;
+import com.laiyifen.library.view.refresh.constant.RefreshState;
+import com.laiyifen.library.view.refresh.constant.SpinnerStyle;
+import com.laiyifen.library.view.refresh.internal.ArrowDrawable;
+import com.laiyifen.library.view.refresh.internal.InternalClassics;
+import com.laiyifen.library.view.refresh.internal.ProgressDrawable;
+import com.laiyifen.library.view.refresh.utils.DensityUtil;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;

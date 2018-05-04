@@ -10,6 +10,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.laiyifen.library.R;
+import com.laiyifen.library.view.refresh.api.RefreshFooter;
+import com.laiyifen.library.view.refresh.api.RefreshKernel;
+import com.laiyifen.library.view.refresh.api.RefreshLayout;
+import com.laiyifen.library.view.refresh.constant.RefreshState;
+import com.laiyifen.library.view.refresh.internal.InternalAbstract;
+import com.laiyifen.library.view.refresh.utils.DensityUtil;
+
 import static android.view.View.MeasureSpec.EXACTLY;
 import static android.view.View.MeasureSpec.makeMeasureSpec;
 

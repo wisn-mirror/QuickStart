@@ -3,6 +3,9 @@ package com.laiyifen.library.view.refresh.impl;
 import android.graphics.PointF;
 import android.view.View;
 
+import com.laiyifen.library.view.refresh.api.ScrollBoundaryDecider;
+import com.laiyifen.library.view.refresh.utils.ScrollBoundaryUtil;
+
 /**
  * 滚动边界
  * Created by SCWANG on 2017/7/8.
