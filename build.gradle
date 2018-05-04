@@ -47,6 +47,7 @@ ext {
             design             : "com.android.support:design:${supportLibrary}",
             annotations        : "com.android.support:support-annotations:${supportLibrary}",
             constraint         : "com.android.support.constraint:constraint-layout:1.0.2",
+            multidex            : "com.android.support:multidex:1.0.1",
             test               : "junit:junit:4.12",
             androidTestrunner  : "com.android.support.test:runner:1.0.1",
             androidTestespresso: "com.android.support.test.espresso:espresso-core:3.0.1",
@@ -71,7 +72,6 @@ ext {
             zxing               : "com.google.zxing:core:3.3.2",
             bugly               : "com.tencent.bugly:crashreport:latest.release",
             walle               : "com.meituan.android.walle:library:1.1.3",
-            multidex            : "com.android.support:multidex:1.0.1",
             bugly               : "com.tencent.bugly:crashreport:latest.release",
             gson               : "com.google.code.gson:gson:2.8.1",
     ]

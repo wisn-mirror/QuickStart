@@ -55,13 +55,13 @@ dependencies {
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
     androidTestImplementation supportDependencies.androidTestespresso
+    implementation supportDependencies.multidex
     implementation supportDependencies.constraint
     implementation supportDependencies.annotations
     implementation supportDependencies.appCompat
     implementation supportDependencies.design
     implementation thirdDependencies.bugly
     implementation thirdDependencies.walle
-    implementation thirdDependencies.multidex
     implementation thirdDependencies.bugly
     implementation project(':library')
 }
