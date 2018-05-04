@@ -20,10 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-#-keep class com.comname.entity.** {*;}
-#个推
-#-dontwarn com.igexin.**
--keep class com.igexin.**{*;}
 #---------------------------------基本指令区----------------------------------
 -ignorewarnings
 -dontusemixedcaseclassnames   # 是否使用大小写混合
@@ -301,7 +297,7 @@ public void xxxxxx(**);
 }
 -keepclassmembers class data.db.dao.** {
     public static final <fields>;
-    }
+}
 
 
 # Retrofit
