@@ -156,8 +156,6 @@
 -keep class com.franmontiel.persistentcookiejar.**
 
 
-#activityrouter
--keep class com.github.mzule.activityrouter.router.** { *; }
 
 #友盟统计
 -keep class com.umeng.analytics.** {*;}
@@ -226,6 +224,8 @@ public static final int *;
 -keep class com.google.gson.stream.** { *; }
 -keep class com.google.gson.examples.android.model.** { *; }
 -keep class com.qiancheng.carsmangersystem.**{*;}
+
+
 # zxing
 -keep class com.google.zxing.** {*;}
 -dontwarn com.google.zxing.**
@@ -238,19 +238,6 @@ public static final int *;
 -dontwarn com.squareup.okhttp3.**
 -keep class com.squareup.okhttp3.** { *;}
 -dontwarn okio.**
-
-#recyclerview-animators
--keep class jp.wasabeef.** {*;}
--dontwarn jp.wasabeef.*
-
-#multistateview
--keep class com.kennyc.view.** { *; }
--dontwarn com.kennyc.view.*
-
-# universal-image-loader 混淆
--dontwarn com.nostra13.universalimageloader.**
--keep class com.nostra13.universalimageloader.** { *; }
-
 
 #-ButterKnife 7.0
  -keep class butterknife.** { *; }
@@ -305,22 +292,6 @@ public void xxxxxx(**);
 -keep class vi.com.** {*;}
 -dontwarn com.baidu.**
 
-# banner 的混淆代码
--keep class com.youth.banner.** {
-    *;
- }
-
- #BaseRecyclerViewAdapter 混淆
- -keep class com.chad.library.adapter.** {
- *;
- }
- -keep public class * extends com.chad.library.adapter.base.BaseQuickAdapter
- -keep public class * extends com.chad.library.adapter.base.BaseViewHolder
- -keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
-      <init>(...);
- }
-
-
 # If you do not use SQLCipher:
 -dontwarn org.greenrobot.greendao.database.**
 # If you do not use RxJava:
@@ -332,6 +303,7 @@ public void xxxxxx(**);
     public static final <fields>;
     }
 
+
 # Retrofit
 -keep class retrofit2.** { *; }
 -dontwarn retrofit2.**
@@ -339,6 +311,8 @@ public void xxxxxx(**);
 -keepattributes Exceptions
 -dontwarn okio.**
 -dontwarn javax.annotation.**
+
+
 
 # RxJava RxAndroid
 -dontwarn sun.misc.**
@@ -356,6 +330,40 @@ public void xxxxxx(**);
 
 
 
+#CymChad/BaseRecyclerViewAdapterHelper
+-keep class com.chad.library.adapter.** {
+*;
+}
+-keep public class * extends com.chad.library.adapter.base.BaseQuickAdapter
+-keep public class * extends com.chad.library.adapter.base.BaseViewHolder
+-keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
+     <init>(...);
+}
+
+
 # bugly
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
+
+
+# ARouter
+-keep public class com.alibaba.android.arouter.routes.**{*;}
+-keep class * implements com.alibaba.android.arouter.facade.template.ISyringe{*;}
+# 如果使用了 byType 的方式获取 Service，需添加下面规则，保护接口
+-keep interface * implements com.alibaba.android.arouter.facade.template.IProvider
+# 如果使用了 单类注入，即不定义接口实现 IProvider，需添加下面规则，保护实现
+-keep class * implements com.alibaba.android.arouter.facade.template.IProvider
+
+
+#activityrouter
+#-keep class com.github.mzule.activityrouter.router.** { *; }
+#multistateview
+#-keep class com.kennyc.view.** { *; }
+#-dontwarn com.kennyc.view.*
+# banner 的混淆代码
+#-keep class com.youth.banner.** {
+#    *;
+# }
+#recyclerview-animators
+#-keep class jp.wasabeef.** {*;}
+#-dontwarn jp.wasabeef.*

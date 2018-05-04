@@ -31,6 +31,9 @@ dependencies {
     compile thirdDependencies.okhttp
     compile thirdDependencies.gson
     compile thirdDependencies.rxjava
+    compile thirdDependencies.arouter
+    annotationProcessor thirdDependencies.arouter_compiler
+
 
 //    compile thirdDependencies.supportv4
     testImplementation supportDependencies.test
