@@ -112,4 +112,4 @@ curl -F "file=@"${uploadPath} -F "uKey=ed639f2e5cac76e08c1eb24b775c2b69" -F "_ap
 #备份
 rm -rf ${backup_Dir}/
 mkdir ${backup_Dir}/
-cp -R ${WORKSPACE}/build/* ${backup_Dir}/
+#cp -R ${WORKSPACE}/build/* ${backup_Dir}/
