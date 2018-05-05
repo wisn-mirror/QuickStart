@@ -1,4 +1,4 @@
-package com.laiyifen.base;
+package com.laiyifen.library.base;
 
 import android.content.Context;
 import android.os.Bundle;

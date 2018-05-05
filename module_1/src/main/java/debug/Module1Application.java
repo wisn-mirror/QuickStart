@@ -1,27 +1,24 @@
-package com.laiyifen;
+package debug;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 
-import com.laiyifen.library.base.BaseActivity;
+import com.laiyifen.library.base.BaseApplication;
 import com.laiyifen.library.net.Net;
 import com.laiyifen.library.net.callback.StringCallback;
 import com.laiyifen.library.net.model.Response;
-import com.meituan.android.walle.WalleChannelReader;
 
-public class MainActivity extends BaseActivity {
+/**
+ * Created by Wisn on 2018/5/5 下午9:16.
+ */
 
+public class Module1Application extends BaseApplication {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        TextView text= (TextView) findViewById(R.id.name);
-        String channel = WalleChannelReader.getChannel(this.getApplicationContext());
-        text.setText(channel);
-        startActivity(new Intent(this,TestActivity.class));
-        swipeBackLayout.setEnableGesture(false);
+    public void onCreate() {
+        super.onCreate();
+        login();
+    }
+
+    public void login() {
         Net.<String>get("https://api.douban.com/v2/movie/top250?start=0&count=10")
                 .execute( new StringCallback(){
                     @Override

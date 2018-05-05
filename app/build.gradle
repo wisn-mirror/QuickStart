@@ -64,6 +64,9 @@ dependencies {
     implementation thirdDependencies.walle
     implementation thirdDependencies.bugly
     implementation project(':library')
+    if (!isModule.toBoolean()) {
+        implementation project(':module_1')
+    }
 }
 
 

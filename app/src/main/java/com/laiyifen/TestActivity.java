@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 
-import com.laiyifen.base.BaseActivity;
+import com.laiyifen.library.base.BaseActivity;
 import com.laiyifen.library.view.refresh.SmartRefreshLayout;
 import com.laiyifen.library.view.refresh.api.DefaultRefreshHeaderCreator;
 import com.laiyifen.library.view.refresh.api.RefreshFooter;
