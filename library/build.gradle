@@ -11,7 +11,11 @@ android {
         versionName app.versionName
         publishNonDefault true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -33,6 +37,7 @@ dependencies {
     compile thirdDependencies.rxjava
     compile thirdDependencies.arouter
     annotationProcessor thirdDependencies.arouter_compiler
+//    apt thirdDependencies.arouter_compiler
     //    compile thirdDependencies.supportv4
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
