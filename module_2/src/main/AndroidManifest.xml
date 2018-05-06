@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.laiyifen.module_2">
+
+    <application android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Module2Activity"
+            android:screenOrientation="portrait" />
+    </application>
+</manifest>

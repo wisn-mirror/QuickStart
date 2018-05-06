@@ -66,6 +66,7 @@ dependencies {
     implementation project(':library')
     if (!isModule.toBoolean()) {
         implementation project(':module_1')
+        implementation project(':module_2')
     }
 }
 
