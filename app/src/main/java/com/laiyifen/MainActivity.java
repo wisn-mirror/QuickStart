@@ -2,37 +2,51 @@ package com.laiyifen;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.laiyifen.library.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
-import com.laiyifen.library.net.Net;
-import com.laiyifen.library.net.callback.StringCallback;
-import com.laiyifen.library.net.model.Response;
 import com.meituan.android.walle.WalleChannelReader;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
+
+    private Button module1;
+    private Button module2;
+    private Button webview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView text= (TextView) findViewById(R.id.name);
+        TextView text = (TextView) findViewById(R.id.name);
+        module1 = (Button) findViewById(R.id.module1);
+        module2 = (Button) findViewById(R.id.module2);
+        webview = (Button) findViewById(R.id.webview);
         String channel = WalleChannelReader.getChannel(this.getApplicationContext());
         text.setText(channel);
-        startActivity(new Intent(this,TestActivity.class));
         swipeBackLayout.setEnableGesture(false);
-        Net.<String>get("https://api.douban.com/v2/movie/top250?start=0&count=10")
-                .execute( new StringCallback(){
-                    @Override
-                    public void onSuccess(Response<String> response) {
-                        Log.e("test",response+response.body());
-                    }
+        module1.setOnClickListener(this);
+        module2.setOnClickListener(this);
+        ARouter.getInstance().build(ActivityPath.App.TestActivity).navigation();
 
-                    @Override
-                    public void onError(Response<String> response) {
-                        super.onError(response);
-                    }
-                });
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v==module1){
+            ARouter.getInstance().build(ActivityPath.Module1.Module1Activity)
+                    .navigation();
+        }else if(v==module2){
+            ARouter.getInstance().build(ActivityPath.Module2.Module2Activity)
+                    .navigation();
+        }else if(v==webview){
+            ARouter.getInstance()
+                    .build(ActivityPath.App.WebViewActivity)
+                    .withString("url", "file:///android_asset/schame-test.html")
+                    .navigation();
+        }
     }
 }

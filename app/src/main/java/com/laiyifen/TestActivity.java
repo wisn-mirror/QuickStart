@@ -7,7 +7,12 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.laiyifen.library.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
+import com.laiyifen.library.net.Net;
+import com.laiyifen.library.net.callback.StringCallback;
+import com.laiyifen.library.net.model.Response;
 import com.laiyifen.library.view.refresh.SmartRefreshLayout;
 import com.laiyifen.library.view.refresh.api.DefaultRefreshHeaderCreator;
 import com.laiyifen.library.view.refresh.api.RefreshFooter;
@@ -23,7 +28,7 @@ import java.util.Locale;
 /**
  * Created by Wisn on 2018/5/3 下午5:07.
  */
-
+@Route(path = ActivityPath.App.TestActivity)
 public class TestActivity extends BaseActivity {
 
     private SmartRefreshLayout smartRefreshLayout;
@@ -94,7 +99,14 @@ public class TestActivity extends BaseActivity {
                 super.onStateChanged(refreshLayout, oldState, newState);
             }
         });
+        Net.<String>get("https://api.douban.com/v2/movie/top250?start=0&count=10")
+                .execute( new StringCallback(){
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Log.e("test",response+response.body());
+                    }
 
+                });
     }
     public void log(String msg){
         Log.e("Test",msg);

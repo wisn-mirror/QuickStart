@@ -1,4 +1,4 @@
-package com.laiyifen.module_1;
+package com.laiyifen;
 
 import android.os.Bundle;
 
@@ -7,13 +7,13 @@ import com.laiyifen.library.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 
 /**
- * Created by Wisn on 2018/5/5 下午8:56.
+ * Created by Wisn on 2018/5/7 下午1:27.
  */
-@Route(path = ActivityPath.Module1.Module1Activity)
-public class Module1Activity extends BaseActivity {
+@Route(path = ActivityPath.App.SchemeFilterActivity)
+public class SchemeFilterActivity extends BaseActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.module1_activity);
+
     }
 }
