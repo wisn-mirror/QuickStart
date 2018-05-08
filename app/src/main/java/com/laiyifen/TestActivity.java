@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.laiyifen.library.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 import com.laiyifen.library.net.Net;

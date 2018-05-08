@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'walle'
+apply plugin: 'com.alibaba.arouter'
+
 android {
     compileSdkVersion app.compileSdkVersion
     buildToolsVersion app.buildToolsVersion
@@ -73,6 +75,7 @@ dependencies {
     implementation thirdDependencies.bugly
     implementation thirdDependencies.walle
     implementation thirdDependencies.bugly
+    annotationProcessor thirdDependencies.arouter_compiler
     implementation project(':library')
     if (!isModule.toBoolean()) {
         implementation project(':module_1')

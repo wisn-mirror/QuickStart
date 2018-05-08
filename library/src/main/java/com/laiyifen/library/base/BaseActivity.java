@@ -3,8 +3,7 @@ package com.laiyifen.library.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.support.v4.widget.SwipeRefreshLayout;
-
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.laiyifen.library.view.swipebacklayout.SwipeBackActivity;
 import com.laiyifen.library.view.swipebacklayout.SwipeBackLayout;
 
@@ -38,6 +37,7 @@ public class BaseActivity extends SwipeBackActivity {
                 vibrate(VIBRATE_DURATION);
             }
         });
+
     }
 
     private void vibrate(long duration) {

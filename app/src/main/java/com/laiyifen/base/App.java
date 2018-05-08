@@ -13,7 +13,11 @@ public class App extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         CrashReport.initCrashReport(getApplicationContext(), "8c212d3996", false);
-        ARouter.debuggable();
+//        ARouter.debuggable();
+        ARouter.openLog();     // 打印日志
+        ARouter.openDebug();     // 打印日志
         ARouter.init(this);
+
+
     }
 }

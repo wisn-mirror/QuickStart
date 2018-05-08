@@ -48,7 +48,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    compile supportDependencies.appCompat
+    implementation supportDependencies.appCompat
+    annotationProcessor thirdDependencies.arouter_compiler
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
     androidTestImplementation supportDependencies.androidTestespresso

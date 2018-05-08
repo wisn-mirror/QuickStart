@@ -30,15 +30,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         swipeBackLayout.setEnableGesture(false);
         module1.setOnClickListener(this);
         module2.setOnClickListener(this);
+        webview.setOnClickListener(this);
+        ARouter.init(getApplication());
         ARouter.getInstance().build(ActivityPath.App.TestActivity).navigation();
-
+//        startActivity(new Intent(this,WebViewActivity.class));
+//        WebViewActivity.startWeb(this,"file:///android_asset/schame-test.html");
     }
 
     @Override
     public void onClick(View v) {
         if(v==module1){
             ARouter.getInstance().build(ActivityPath.Module1.Module1Activity)
-                    .navigation();
+                    .navigation(MainActivity.this);
         }else if(v==module2){
             ARouter.getInstance().build(ActivityPath.Module2.Module2Activity)
                     .navigation();
@@ -46,7 +49,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             ARouter.getInstance()
                     .build(ActivityPath.App.WebViewActivity)
                     .withString("url", "file:///android_asset/schame-test.html")
-                    .navigation();
+                    .navigation(MainActivity.this);
         }
     }
 }

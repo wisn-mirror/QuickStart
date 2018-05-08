@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile supportDependencies.appCompat
     compile supportDependencies.recyclerview
     compile supportDependencies.design
@@ -37,10 +37,8 @@ dependencies {
     compile thirdDependencies.rxjava
     compile thirdDependencies.arouter
     annotationProcessor thirdDependencies.arouter_compiler
-//    apt thirdDependencies.arouter_compiler
-    //    compile thirdDependencies.supportv4
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
     androidTestImplementation supportDependencies.androidTestespresso
-    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604_sharewithdownload_withoutGame_obfs_20180211_105126.jar')
+    compile files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604_sharewithdownload_withoutGame_obfs_20180211_105126.jar')
 }
