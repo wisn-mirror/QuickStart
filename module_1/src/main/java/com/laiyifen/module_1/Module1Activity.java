@@ -15,7 +15,7 @@ import com.laiyifen.library.base.BaseActivity;
 public class Module1Activity extends BaseActivity {
 
     @Override
-    public int getLayoutId() {
+    public int bindLayout() {
         return R.layout.module1_activity;
     }
 

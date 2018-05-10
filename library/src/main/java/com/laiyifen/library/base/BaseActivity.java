@@ -3,12 +3,9 @@ package com.laiyifen.library.base;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.laiyifen.library.view.swipebacklayout.SwipeBackActivity;
-import com.laiyifen.library.view.swipebacklayout.SwipeBackLayout;
 
 /**
  * Created by Wisn on 2018/5/4 上午9:02.
@@ -17,30 +14,12 @@ import com.laiyifen.library.view.swipebacklayout.SwipeBackLayout;
 public abstract class BaseActivity extends SwipeBackActivity {
     private boolean isFrist = true;
 
-    public SwipeBackLayout swipeBackLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        swipeBackLayout = getSwipeBackLayout();
-        swipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
-        swipeBackLayout.addSwipeListener(new SwipeBackLayout.SwipeListener() {
-            @Override
-            public void onScrollStateChange(int state, float scrollPercent) {
-            }
-
-            @Override
-            public void onEdgeTouch(int edgeFlag) {
-                vibrate(VIBRATE_DURATION);
-            }
-
-            @Override
-            public void onScrollOverThreshold() {
-                vibrate(VIBRATE_DURATION);
-            }
-        });
-        setContentView(getLayoutId());
+        setContentView(bindLayout());
         hideActionBar();
+        initView(this);
     }
 
     public void hideActionBar() {
@@ -49,6 +28,7 @@ public abstract class BaseActivity extends SwipeBackActivity {
             supportActionBar.hide();
         }
     }
+
     public void showActionBar() {
         ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
@@ -57,8 +37,7 @@ public abstract class BaseActivity extends SwipeBackActivity {
     }
 
 
-
-    public abstract int getLayoutId();
+    public abstract int bindLayout();
 
     public abstract void initView(Activity activity);
 

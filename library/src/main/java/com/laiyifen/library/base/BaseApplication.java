@@ -1,6 +1,6 @@
 package com.laiyifen.library.base;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
 import com.tencent.smtt.sdk.QbSdk;
@@ -9,7 +9,7 @@ import com.tencent.smtt.sdk.QbSdk;
  * Created by Wisn on 2018/5/5 下午9:19.
  */
 
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
 
     @Override
     public void onCreate() {

@@ -36,7 +36,7 @@ public class TestActivity extends BaseActivity {
     private SmartRefreshLayout smartRefreshLayout;
 
     @Override
-    public int getLayoutId() {
+    public int bindLayout() {
         return R.layout.activity_test;
     }
 

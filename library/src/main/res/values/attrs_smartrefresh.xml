@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SwipeBackLayout">
-        <attr name="edge_size" format="dimension"/>
-        <attr name="edge_flag">
-            <enum name="left" value="0" />
-            <enum name="right" value="1" />
-            <enum name="bottom" value="2" />
-            <enum name="all" value="3" />
-        </attr>
-        <attr name="shadow_left" format="reference"/>
-        <attr name="shadow_right" format="reference"/>
-        <attr name="shadow_bottom" format="reference"/>
-    </declare-styleable>
-
-    <attr name="SwipeBackLayoutStyle" format="reference"/>
-
-
     <attr name="srlDrawableSize" format="dimension"/><!--图片尺寸-->
     <attr name="srlDrawableArrowSize" format="dimension"/><!--箭头图片尺寸-->
     <attr name="srlDrawableProgressSize" format="dimension"/><!--箭头图片尺寸-->
@@ -27,14 +11,13 @@
     <attr name="srlAccentColor" format="color"/><!--强调颜色-->
     <attr name="srlDrawableArrow" format="reference"/><!--箭头图片-->
     <attr name="srlDrawableProgress" format="reference"/><!--转动图片-->
-    <attr name="srlEnableHorizontalDrag" format="boolean"/><!--支持水平拖动-->
+    <attr name="srlEnableHorizontalDrag" format="boolean"/>支持水平拖动
 
     <attr name="srlClassicsSpinnerStyle" format="enum">
         <enum name="Translate" value="0"/><!--平行移动-->
         <enum name="Scale" value="1"/><!--拉伸形变-->
         <enum name="FixedBehind" value="2"/><!--固定在背后-->
     </attr>
-
     <attr name="layout_srlSpinnerStyle" format="enum">
         <enum name="Translate" value="0"/><!--平行移动-->
         <enum name="Scale" value="1"/><!--拉伸形变-->

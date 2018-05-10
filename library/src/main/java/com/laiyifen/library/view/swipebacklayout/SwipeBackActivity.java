@@ -8,17 +8,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 
-public class SwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
-    private SwipeBackActivityHelper mHelper;
+public class SwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase, SwipeBackLayout.SwipeListener  {
     protected static final int VIBRATE_DURATION = 20;
+    private SwipeBackActivityHelper mHelper;
+    public SwipeBackLayout swipeBackLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHelper = new SwipeBackActivityHelper(this);
         mHelper.onActivityCreate();
+        swipeBackLayout = getSwipeBackLayout();
+        swipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+        swipeBackLayout.addSwipeListener(this);
     }
 
+
+    @Override
+    public void onScrollStateChange(int state, float scrollPercent) {
+    }
+
+    @Override
+    public void onEdgeTouch(int edgeFlag) {
+        vibrate(VIBRATE_DURATION);
+    }
+
+    @Override
+    public void onScrollOverThreshold() {
+        vibrate(VIBRATE_DURATION);
+    }
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);

@@ -1,5 +1,7 @@
 package com.laiyifen;
 
+import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -25,6 +27,21 @@ public class SchemeFilterActivity extends BaseActivity{
                 finish();
             }
         });
+
+    }
+
+    @Override
+    public int bindLayout() {
+        return 0;
+    }
+
+    @Override
+    public void initView(Activity activity) {
+
+    }
+
+    @Override
+    public void initData(Context context) {
 
     }
 }
