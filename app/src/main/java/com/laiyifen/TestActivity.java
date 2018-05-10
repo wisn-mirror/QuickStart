@@ -1,5 +1,6 @@
 package com.laiyifen;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,13 +36,14 @@ public class TestActivity extends BaseActivity {
     private SmartRefreshLayout smartRefreshLayout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-        ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar != null) {
-//            supportActionBar.hide();
-        }
+    public int getLayoutId() {
+        return R.layout.activity_test;
+    }
+
+    @Override
+    public void initView(Activity activity) {
+        showActionBar();
+
         smartRefreshLayout = (SmartRefreshLayout) findViewById(R.id.refreshlayout);
 //        smartRefreshLayout.setRefreshHeader();
         smartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
@@ -74,7 +76,7 @@ public class TestActivity extends BaseActivity {
                     public void run() {
                         smartRefreshLayout.finishRefresh();
                     }
-                },1000);
+                }, 1000);
             }
 
             @Override
@@ -92,7 +94,7 @@ public class TestActivity extends BaseActivity {
                     public void run() {
                         smartRefreshLayout.finishLoadMore();
                     }
-                },5000);
+                }, 5000);
             }
 
             @Override
@@ -100,17 +102,22 @@ public class TestActivity extends BaseActivity {
                 super.onStateChanged(refreshLayout, oldState, newState);
             }
         });
+    }
+
+    @Override
+    public void initData(Context context) {
         Net.<String>get("https://api.douban.com/v2/movie/top250?start=0&count=10")
-                .execute( new StringCallback(){
+                .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        Log.e("test",response+response.body());
+                        Log.e("test", response + response.body());
                     }
 
                 });
     }
-    public void log(String msg){
-        Log.e("Test",msg);
+
+    public void log(String msg) {
+        Log.e("Test", msg);
     }
 
 }

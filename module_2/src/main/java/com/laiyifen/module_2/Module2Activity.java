@@ -1,5 +1,7 @@
 package com.laiyifen.module_2;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -12,9 +14,19 @@ import com.laiyifen.library.base.BaseActivity;
 
 @Route(path = ActivityPath.Module2.Module2Activity)
 public class Module2Activity extends BaseActivity {
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.module2_activity);
+    public int getLayoutId() {
+        return R.layout.module2_activity;
+    }
+
+    @Override
+    public void initView(Activity activity) {
+
+    }
+
+    @Override
+    public void initData(Context context) {
+
     }
 }

@@ -1,13 +1,16 @@
 
 package com.laiyifen.library.view.swipebacklayout;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 
 public class SwipeBackActivity extends AppCompatActivity implements SwipeBackActivityBase {
     private SwipeBackActivityHelper mHelper;
+    protected static final int VIBRATE_DURATION = 20;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,5 +47,13 @@ public class SwipeBackActivity extends AppCompatActivity implements SwipeBackAct
     public void scrollToFinishActivity() {
         Utils.convertActivityToTranslucent(this);
         getSwipeBackLayout().scrollToFinishActivity();
+    }
+
+    protected void vibrate(long duration) {
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {
+                0, duration
+        };
+        vibrator.vibrate(pattern, -1);
     }
 }

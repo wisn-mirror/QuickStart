@@ -1,7 +1,7 @@
 package com.laiyifen;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,10 +17,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button module2;
     private Button webview;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public void initView(Activity activity) {
         TextView text = (TextView) findViewById(R.id.name);
         module1 = (Button) findViewById(R.id.module1);
         module2 = (Button) findViewById(R.id.module2);
@@ -33,8 +37,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         webview.setOnClickListener(this);
         ARouter.init(getApplication());
         ARouter.getInstance().build(ActivityPath.App.TestActivity).navigation();
-//        startActivity(new Intent(this,WebViewActivity.class));
-//        WebViewActivity.startWeb(this,"file:///android_asset/schame-test.html");
+    }
+
+    @Override
+    public void initData(Context context) {
+
     }
 
     @Override

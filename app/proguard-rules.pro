@@ -350,6 +350,9 @@ public void xxxxxx(**);
 # 如果使用了 单类注入，即不定义接口实现 IProvider，需添加下面规则，保护实现
 -keep class * implements com.alibaba.android.arouter.facade.template.IProvider
 
+#X5 内核
+-dontwarn com.tencent.smtt.**
+-keep public class com.tencent.smtt.**{*;}
 
 #activityrouter
 #-keep class com.github.mzule.activityrouter.router.** { *; }
