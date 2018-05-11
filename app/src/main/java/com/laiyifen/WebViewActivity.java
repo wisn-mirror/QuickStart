@@ -1,16 +1,13 @@
 package com.laiyifen;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.library.ActivityPath;
+import com.laiyifen.common.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 import com.laiyifen.library.utils.ToastUtils;
 import com.laiyifen.library.view.webview.X5WebView;

@@ -2,10 +2,9 @@ package com.laiyifen.module_1;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.library.ActivityPath;
+import com.laiyifen.common.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 
 /**

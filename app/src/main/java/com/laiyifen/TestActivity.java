@@ -2,15 +2,12 @@ package com.laiyifen;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
-import com.laiyifen.library.ActivityPath;
+import com.laiyifen.common.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 import com.laiyifen.library.net.Net;
 import com.laiyifen.library.net.callback.StringCallback;

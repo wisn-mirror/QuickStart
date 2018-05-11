@@ -9,7 +9,8 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.laiyifen.library.ActivityPath;
+
+import com.laiyifen.common.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 
 /**

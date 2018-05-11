@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.laiyifen.library.ActivityPath;
+import com.laiyifen.common.ActivityPath;
 import com.laiyifen.library.base.BaseActivity;
 import com.meituan.android.walle.WalleChannelReader;
 

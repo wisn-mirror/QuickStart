@@ -54,6 +54,6 @@ dependencies {
     testImplementation supportDependencies.test
     androidTestImplementation supportDependencies.androidTestrunner
     androidTestImplementation supportDependencies.androidTestespresso
-    implementation project(':library')
+    implementation project(':common')
 
 }

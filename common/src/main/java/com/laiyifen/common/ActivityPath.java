@@ -1,4 +1,4 @@
-package com.laiyifen.library;
+package com.laiyifen.common;
 
 /**
  * Created by Wisn on 2018/5/7 下午12:36.
