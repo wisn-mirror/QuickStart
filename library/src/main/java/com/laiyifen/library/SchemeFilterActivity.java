@@ -1,4 +1,4 @@
-package com.laiyifen.common;
+package com.laiyifen.library;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,9 +9,8 @@ import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
-
-import com.laiyifen.common.constants.ARoutePath;
 import com.laiyifen.library.base.BaseActivity;
+import com.laiyifen.library.constants.ARoutePath;
 
 /**
  * Created by Wisn on 2018/5/7 下午1:27.

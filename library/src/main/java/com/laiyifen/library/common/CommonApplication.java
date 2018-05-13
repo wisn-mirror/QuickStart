@@ -1,4 +1,4 @@
-package com.laiyifen.common.common;
+package com.laiyifen.library.common;
 
 import com.laiyifen.library.base.BaseApplication;
 

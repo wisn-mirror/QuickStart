@@ -9,6 +9,7 @@ import com.tencent.bugly.crashreport.CrashReport;
  */
 
 public class App extends BaseApplication {
+
     @Override
     public void onCreate() {
         super.onCreate();

@@ -7,8 +7,8 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.common.common.CommonActivity;
-import com.laiyifen.common.constants.ARoutePath;
+import com.laiyifen.library.common.CommonActivity;
+import com.laiyifen.library.constants.ARoutePath;
 import com.laiyifen.library.net.Net;
 import com.laiyifen.library.net.callback.StringCallback;
 import com.laiyifen.library.net.model.Response;

@@ -2,7 +2,7 @@ package debug;
 
 import android.util.Log;
 
-import com.laiyifen.common.common.CommonApplication;
+import com.laiyifen.library.common.CommonApplication;
 import com.laiyifen.library.net.Net;
 import com.laiyifen.library.net.callback.StringCallback;
 import com.laiyifen.library.net.model.Response;

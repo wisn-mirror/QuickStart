@@ -1,4 +1,4 @@
-package com.laiyifen.common.constants;
+package com.laiyifen.library.constants;
 
 /**
  * Created by Wisn on 2018/5/7 下午12:36.

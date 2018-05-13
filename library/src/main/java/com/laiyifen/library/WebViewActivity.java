@@ -1,4 +1,4 @@
-package com.laiyifen.common.webview;
+package com.laiyifen.library;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,9 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.common.R;
-import com.laiyifen.common.common.CommonActivity;
-import com.laiyifen.common.constants.ARoutePath;
+import com.laiyifen.library.common.CommonActivity;
+import com.laiyifen.library.constants.ARoutePath;
 import com.laiyifen.library.utils.ToastUtils;
 import com.laiyifen.library.view.webview.X5WebView;
 import com.tencent.smtt.export.external.interfaces.JsResult;

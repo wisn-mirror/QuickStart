@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.laiyifen.common.common.CommonActivity;
-import com.laiyifen.common.constants.ARoutePath;
+import com.laiyifen.library.common.CommonActivity;
+import com.laiyifen.library.constants.ARoutePath;
 
 /**
  * Created by Wisn on 2018/5/11 上午9:10.
