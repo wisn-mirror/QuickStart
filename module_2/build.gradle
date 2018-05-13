@@ -44,16 +44,21 @@ android {
             }
         }
     }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            universalApk true
+        }
+    }
+
 
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation supportDependencies.appCompat
     annotationProcessor thirdDependencies.arouter_compiler
-    testImplementation supportDependencies.test
-    androidTestImplementation supportDependencies.androidTestrunner
-    androidTestImplementation supportDependencies.androidTestespresso
     implementation project(':common')
 
 }

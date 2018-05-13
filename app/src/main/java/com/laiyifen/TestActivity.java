@@ -7,8 +7,8 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.common.ActivityPath;
-import com.laiyifen.library.base.BaseActivity;
+import com.laiyifen.common.common.CommonActivity;
+import com.laiyifen.common.constants.ARoutePath;
 import com.laiyifen.library.net.Net;
 import com.laiyifen.library.net.callback.StringCallback;
 import com.laiyifen.library.net.model.Response;
@@ -27,8 +27,8 @@ import java.util.Locale;
 /**
  * Created by Wisn on 2018/5/3 下午5:07.
  */
-@Route(path = ActivityPath.App.TestActivity)
-public class TestActivity extends BaseActivity {
+@Route(path = ARoutePath.App.TestActivity)
+public class TestActivity extends CommonActivity {
 
     private SmartRefreshLayout smartRefreshLayout;
 

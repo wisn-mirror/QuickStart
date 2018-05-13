@@ -1,38 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:radiobutton="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center|top"
+    android:orientation="vertical"
     tools:context="com.laiyifen.MainActivity">
-    <Button
-        android:id="@+id/module1"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:text="module1" />
-    <Button
-        android:id="@+id/module2"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:text="module2" />
-    <Button
-        android:id="@+id/webview"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:text="webview" />
 
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+    <com.laiyifen.library.view.refresh.SmartRefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="test" />
+    </com.laiyifen.library.view.refresh.SmartRefreshLayout>
+
+    <RadioGroup
+        android:id="@+id/bottom_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <com.laiyifen.library.view.tipview.TipRadioButton
+            android:id="@+id/radiobutton_bg_message"
+            style="@style/radiobutton_style"
+            android:checked="true"
+            android:text="首页"
+            radiobutton:drawableTop="@drawable/select_home"
+            radiobutton:tipText="33" />
+
+        <com.laiyifen.library.view.tipview.TipRadioButton
+            android:id="@+id/radiobutton_bg_contact"
+            style="@style/radiobutton_style"
+            android:text="分类"
+            radiobutton:drawableTop="@drawable/select_classification"
+            radiobutton:tipText="334" />
+
+        <com.laiyifen.library.view.tipview.TipRadioButton
+            android:id="@+id/radiobutton_bg_work"
+            style="@style/radiobutton_style"
+            android:text="购物车"
+            radiobutton:drawableTop="@drawable/select_buycart" />
+
+        <com.laiyifen.library.view.tipview.TipRadioButton
+            android:id="@+id/radiobutton_bg_mine"
+            style="@style/radiobutton_style"
+            android:text="个人中心"
+            radiobutton:drawableTop="@drawable/select_my"
+            radiobutton:isTip="true" />
+    </RadioGroup>
+
+</RelativeLayout>

@@ -1,12 +1,13 @@
-package com.laiyifen.common;
+package com.laiyifen.common.constants;
 
 /**
  * Created by Wisn on 2018/5/7 下午12:36.
  */
 
-public class ActivityPath {
+public class ARoutePath {
     public static class App{
         public static final String WebViewActivity="/app/WebViewActivity";
+        public static final String MainActivity="/app/MainActivity";
         public static final String TestActivity="/app/TestActivity";
         public static final String SchemeFilterActivity="/app/SchemeFilterActivity";
     }

@@ -2,7 +2,7 @@ package debug;
 
 import android.util.Log;
 
-import com.laiyifen.library.base.BaseApplication;
+import com.laiyifen.common.common.CommonApplication;
 import com.laiyifen.library.net.Net;
 import com.laiyifen.library.net.callback.StringCallback;
 import com.laiyifen.library.net.model.Response;
@@ -11,7 +11,7 @@ import com.laiyifen.library.net.model.Response;
  * Created by Wisn on 2018/5/5 下午9:16.
  */
 
-public class Module1Application extends BaseApplication {
+public class Module1Application extends CommonApplication {
     @Override
     public void onCreate() {
         super.onCreate();

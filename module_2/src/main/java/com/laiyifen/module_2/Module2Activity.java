@@ -4,15 +4,15 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.common.ActivityPath;
-import com.laiyifen.library.base.BaseActivity;
+import com.laiyifen.common.common.CommonActivity;
+import com.laiyifen.common.constants.ARoutePath;
 
 /**
  * Created by Wisn on 2018/5/5 下午8:56.
  */
 
-@Route(path = ActivityPath.Module2.Module2Activity)
-public class Module2Activity extends BaseActivity {
+@Route(path = ARoutePath.Module2.Module2Activity)
+public class Module2Activity extends CommonActivity {
 
     @Override
     public int bindLayout() {

@@ -1,4 +1,4 @@
-package com.laiyifen;
+package com.laiyifen.common.webview;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.common.ActivityPath;
-import com.laiyifen.library.base.BaseActivity;
+import com.laiyifen.common.R;
+import com.laiyifen.common.common.CommonActivity;
+import com.laiyifen.common.constants.ARoutePath;
 import com.laiyifen.library.utils.ToastUtils;
 import com.laiyifen.library.view.webview.X5WebView;
 import com.tencent.smtt.export.external.interfaces.JsResult;
@@ -18,8 +19,8 @@ import com.tencent.smtt.sdk.WebView;
 /**
  * Created by Wisn on 2018/5/7 下午1:32.
  */
-@Route(path = ActivityPath.App.WebViewActivity)
-public class WebViewActivity extends BaseActivity {
+@Route(path = ARoutePath.App.WebViewActivity)
+public class WebViewActivity extends CommonActivity {
 
     private X5WebView webView;
     private TextView tv_title;

@@ -6,6 +6,7 @@ android {
     compileSdkVersion app.compileSdkVersion
     buildToolsVersion app.buildToolsVersion
     defaultConfig {
+        multiDexEnabled true
         applicationId app.applicationId
         minSdkVersion app.minSdkVersion
         targetSdkVersion app.targetSdkVersion
@@ -25,6 +26,9 @@ android {
             annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
             }
+        }
+        dexOptions {
+            additionalParameters = ["--minimal-main-dex"]
         }
     }
 
@@ -60,19 +64,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            universalApk true
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testImplementation supportDependencies.test
-    androidTestImplementation supportDependencies.androidTestrunner
-    androidTestImplementation supportDependencies.androidTestespresso
-    implementation supportDependencies.multidex
-    implementation supportDependencies.constraint
-    implementation supportDependencies.annotations
-    implementation supportDependencies.appCompat
-    implementation supportDependencies.design
-    implementation thirdDependencies.bugly
     implementation thirdDependencies.walle
     implementation thirdDependencies.bugly
     annotationProcessor thirdDependencies.arouter_compiler

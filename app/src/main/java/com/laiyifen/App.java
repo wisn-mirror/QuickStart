@@ -1,4 +1,4 @@
-package com.laiyifen.base;
+package com.laiyifen;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.laiyifen.library.base.BaseApplication;

@@ -31,9 +31,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile supportDependencies.appCompat
-    compile 'com.android.support.constraint:constraint-layout:1.1.0'
-    annotationProcessor thirdDependencies.arouter_compiler
+//    annotationProcessor thirdDependencies.arouter_compiler
     compile project(':library')
 
 }

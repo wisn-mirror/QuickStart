@@ -3,7 +3,7 @@
     package="com.laiyifen">
 
     <application
-        android:name=".base.App"
+        android:name=".App"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".splash.SplashActivity"
+            android:name=".SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splash">
             <intent-filter>
@@ -20,8 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestActivity"></activity>
-        <activity android:name=".WebViewActivity"></activity>
-        <activity android:name=".SchemeFilterActivity">
+        <activity android:name=".common.SchemeFilterActivity">
             <!-- Schame -->
             <intent-filter>
                 <data
