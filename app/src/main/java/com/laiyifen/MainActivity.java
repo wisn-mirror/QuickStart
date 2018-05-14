@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.laiyifen.library.common.CommonActivity;
-import com.laiyifen.library.constants.ARoutePath;
+import com.laiyifen.library.commons.common.CommonActivity;
+import com.laiyifen.library.commons.constants.ARoutePath;
 
 @Route(path = ARoutePath.App.MainActivity)
 public class MainActivity extends CommonActivity implements View.OnClickListener {
