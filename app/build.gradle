@@ -81,8 +81,11 @@ dependencies {
     annotationProcessor thirdDependencies.arouter_compiler
     implementation project(':library')
     if (!isModule.toBoolean()) {
-        implementation project(':module_1')
-        implementation project(':module_2')
+        implementation project(':homepager')
+        implementation project(':merchandise')
+        implementation project(':shopcart')
+        implementation project(':mine')
+        implementation project(':order')
     }
 }
 

@@ -3,7 +3,7 @@
 
     <application android:theme="@style/AppTheme" >
         <activity
-            android:name=".Module2Activity"
+            android:name=".ModuleActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

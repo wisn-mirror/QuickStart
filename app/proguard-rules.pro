@@ -131,9 +131,9 @@
 
 #-keep class com.guiying.news.data.bean.** {*;}
 #-keep class com.guiying.girls.data.bean.** {*;}
+-keep class com.laiyifen.** {*;}
 -keep class com.laiyifen.library.view.** {*;}
 -keep class com.laiyifen.common.** {*;}
--keep class com.laiyifen.** {*;}
 
 #---------------------------------第三方库及jar包-------------------------------
 
