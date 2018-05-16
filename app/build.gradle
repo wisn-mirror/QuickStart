@@ -58,7 +58,7 @@ android {
             matchingFallbacks = ['release', 'debug']
         }
         debug {
-            minifyEnabled true
+            minifyEnabled false
 //            applicationIdSuffix ".debug"
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -85,7 +85,7 @@ dependencies {
         implementation project(':merchandise')
         implementation project(':shopcart')
         implementation project(':mine')
-        implementation project(':order')
+//        implementation project(':order')
     }
 }
 

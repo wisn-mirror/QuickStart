@@ -61,6 +61,7 @@ public class X5WebView extends WebView {
         // webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
         // webSetting.setCacheMode(WebSettings.LOAD_NO_CACHE);
         this.setWebContentsDebuggingEnabled(true);
+        addJavascriptInterface(new JavaToH5Api(getContext().hashCode()), "mobileAPI");
 
     }
 

@@ -21,13 +21,15 @@ import com.tencent.smtt.sdk.WebView;
  */
 @Route(path = ARoutePath.App.WebViewActivity)
 public class WebViewActivity extends CommonActivity {
+    private static final String URL="url";
+
 
     private X5WebView webView;
     private TextView tv_title;
 
     public static void startWeb(Context context, String url) {
         Intent intent = new Intent(context, WebViewActivity.class);
-        intent.putExtra("url", url);
+        intent.putExtra(URL, url);
         context.startActivity(intent);
     }
 
@@ -55,7 +57,7 @@ public class WebViewActivity extends CommonActivity {
                 });
             }
         });
-        webView.loadUrl(getIntent().getStringExtra("url"));
+        webView.loadUrl(getIntent().getStringExtra(URL));
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onJsConfirm(WebView webView, String url, String message, final JsResult jsResult) {

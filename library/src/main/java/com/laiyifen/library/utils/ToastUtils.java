@@ -11,7 +11,7 @@ public class ToastUtils {
     private static Toast toast;
 
     public static void show( String msg) {
-        if (toast != null) {
+        if (toast == null) {
             toast = Toast.makeText(Utils.getApp().getApplicationContext(), msg, Toast.LENGTH_SHORT);
         } else {
             toast.setText(msg);

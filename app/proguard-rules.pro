@@ -162,25 +162,6 @@
 -keep public class [com.qiancheng.carsmangersystem].R$*{
 public static final int *;
 }
-#友盟推送
--dontwarn com.taobao.**
--dontwarn anet.channel.**
--dontwarn anetwork.channel.**
--dontwarn org.android.**
--dontwarn org.apache.thrift.**
--dontwarn com.xiaomi.**
--dontwarn com.huawei.**
--keep class com.taobao.** {*;}
--keep class org.android.** {*;}
--keep class anet.channel.** {*;}
--keep class com.umeng.** {*;}
--keep class com.xiaomi.** {*;}
--keep class com.huawei.** {*;}
--keep class org.apache.thrift.** {*;}
--keep class com.alibaba.sdk.android.**{*;}
--keep class com.ut.**{*;}
--keep class com.ta.**{*;}
-
 
 
 #高德相关混淆文件
@@ -193,20 +174,6 @@ public static final int *;
 -dontwarn com.autonavi.**
 -dontwarn com.a.a.**
 -dontwarn com.loc.**
-
-
-# simple-xml-core的SDK
--keep class org.simpleframework.xml.** {*;}
--dontwarn org.simpleframework.xml.**
-
-# acra的 SDK
--keep class org.acra.** {*;}
--dontwarn org.acra.**
-
-# 网络请求库async-http
--keep class com.loopj.android.http.** {*;}
--dontwarn com.loopj.android.http.**
-
 
 #pinyin4j
 -dontwarn net.soureceforge.pinyin4j.**
@@ -285,21 +252,7 @@ public void xxxxxx(**);
 -keep interface android.support.design.** { *; }
 -keep public class android.support.design.R$* { *; }
 
-#百度地图混淆
--keep class com.baidu.** {*;}
--keep class vi.com.** {*;}
--dontwarn com.baidu.**
 
-# If you do not use SQLCipher:
--dontwarn org.greenrobot.greendao.database.**
-# If you do not use RxJava:
--dontwarn rx.**
--keep class data.db.dao.*$Properties {
-    public static <fields>;
-}
--keepclassmembers class data.db.dao.** {
-    public static final <fields>;
-}
 
 
 # Retrofit
