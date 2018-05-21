@@ -14,11 +14,20 @@ import android.view.ViewGroup;
  * Created by Wisn on 2018/5/6 上午10:20.
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements FragmentUserVisibleController.UserVisibleCallback {
+
+    private boolean isInit; // 是否可以开始加载数据
+    private boolean isCreated;
     /**
      * 当前Fragment渲染的视图View
      **/
     private View mContextView = null;
+    private FragmentUserVisibleController userVisibleController;
+
+    public BaseFragment() {
+        userVisibleController = new FragmentUserVisibleController(this, this);
+
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -28,6 +37,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        isCreated = true;
     }
 
     @Nullable
@@ -49,8 +59,46 @@ public abstract class BaseFragment extends Fragment {
     }
 
     @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        isInit = true;
+        userVisibleController.activityCreated();
+    }
+
+    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        userVisibleController.resume();
+        if (getUserVisibleHint()) {
+            if (isInit && isCreated) {
+                isInit = false;// 加载数据完成
+                //System.out.println("应该去加载数据了");
+                requestData();
+            }
+        }
+
+    }
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        userVisibleController.setUserVisibleHint(isVisibleToUser);
+        // 每次切换fragment时调用的方法
+        if (isVisibleToUser) {
+            if (isInit&&isCreated) {
+                isInit = false;//加载数据完成
+                requestData();
+            }
+        }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        userVisibleController.pause();
     }
 
     @Override
@@ -69,4 +117,29 @@ public abstract class BaseFragment extends Fragment {
     public abstract int bindLayout();
 
     public abstract void requestData();
+
+    @Override
+    public void setWaitingShowToUser(boolean waitingShowToUser) {
+        userVisibleController.setWaitingShowToUser(waitingShowToUser);
+    }
+
+    @Override
+    public boolean isWaitingShowToUser() {
+        return userVisibleController.isWaitingShowToUser();
+    }
+
+    @Override
+    public boolean isVisibleToUser() {
+        return userVisibleController.isVisibleToUser();
+    }
+
+    @Override
+    public void callSuperSetUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+    }
+
+    @Override
+    public void onVisibleToUserChanged(boolean isVisibleToUser, boolean invokeInResumeOrPause) {
+
+    }
 }
