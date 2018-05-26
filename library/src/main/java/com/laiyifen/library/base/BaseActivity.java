@@ -5,13 +5,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 
+import com.laiyifen.library.commons.mvp.BaseView;
 import com.laiyifen.library.view.swipebacklayout.SwipeBackActivity;
 
 /**
  * Created by Wisn on 2018/5/4 上午9:02.
  */
 
-public abstract class BaseActivity extends SwipeBackActivity {
+public abstract class BaseActivity extends SwipeBackActivity implements BaseView {
     private boolean isFrist = true;
 
     @Override
@@ -53,5 +54,18 @@ public abstract class BaseActivity extends SwipeBackActivity {
         }
     }
 
+    @Override
+    public void onNetStart(String startMsg) {
 
+    }
+    @Override
+    public void onNetError(String errorMsg) {
+
+    }
+
+
+    @Override
+    public void onNetFinish(String startMsg) {
+
+    }
 }

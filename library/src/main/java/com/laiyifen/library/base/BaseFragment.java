@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.laiyifen.library.commons.mvp.BaseView;
+
 /**
  * Created by Wisn on 2018/5/6 上午10:20.
  */
 
-public abstract class BaseFragment extends Fragment implements FragmentUserVisibleController.UserVisibleCallback {
+public abstract class BaseFragment extends Fragment implements FragmentUserVisibleController.UserVisibleCallback,BaseView {
 
     private boolean isInit; // 是否可以开始加载数据
     private boolean isCreated;
@@ -77,8 +79,7 @@ public abstract class BaseFragment extends Fragment implements FragmentUserVisib
         if (getUserVisibleHint()) {
             if (isInit && isCreated) {
                 isInit = false;// 加载数据完成
-                //System.out.println("应该去加载数据了");
-                requestData();
+                initData();
             }
         }
 
@@ -91,7 +92,7 @@ public abstract class BaseFragment extends Fragment implements FragmentUserVisib
         if (isVisibleToUser) {
             if (isInit&&isCreated) {
                 isInit = false;//加载数据完成
-                requestData();
+                initData();
             }
         }
     }
@@ -112,11 +113,12 @@ public abstract class BaseFragment extends Fragment implements FragmentUserVisib
     }
 
 
-    public abstract void initView(View view);
 
     public abstract int bindLayout();
 
-    public abstract void requestData();
+    public abstract void initView(View view);
+
+    public abstract void initData();
 
     @Override
     public void setWaitingShowToUser(boolean waitingShowToUser) {
@@ -140,6 +142,21 @@ public abstract class BaseFragment extends Fragment implements FragmentUserVisib
 
     @Override
     public void onVisibleToUserChanged(boolean isVisibleToUser, boolean invokeInResumeOrPause) {
+
+    }
+
+    @Override
+    public void onNetStart(String startMsg) {
+
+    }
+    @Override
+    public void onNetError(String errorMsg) {
+
+    }
+
+
+    @Override
+    public void onNetFinish(String startMsg) {
 
     }
 }

@@ -5,5 +5,8 @@ package com.laiyifen.library.commons.mvp;
  */
 
 public interface BaseView {
-    void onError(String errorMsg);
+    void onNetError(String errorMsg);
+    void onNetStart(String startMsg);
+    void onNetFinish(String startMsg);
+
 }

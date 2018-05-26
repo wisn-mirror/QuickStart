@@ -45,9 +45,12 @@ dependencies {
     compile thirdDependencies.gson
     compile thirdDependencies.rxjava
     compile thirdDependencies.arouter
+    compile thirdDependencies.rxjava
+    compile thirdDependencies.rxandroid
+    compile thirdDependencies.retrofit
+    compile thirdDependencies.gsonConverter
+    compile thirdDependencies.rxjavaAdapter
+    compile thirdDependencies.cymchad
 //    annotationProcessor thirdDependencies.arouter_compiler
-    testImplementation supportDependencies.test
-    androidTestImplementation supportDependencies.androidTestrunner
-    androidTestImplementation supportDependencies.androidTestespresso
     compile files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604_sharewithdownload_withoutGame_obfs_20180211_105126.jar')
 }

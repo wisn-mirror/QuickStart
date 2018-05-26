@@ -3,6 +3,8 @@ package com.laiyifen.library.base;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.laiyifen.library.utils.Utils;
 import com.tencent.smtt.sdk.QbSdk;
 
 /**
@@ -14,6 +16,11 @@ public class BaseApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        Utils.init(this);
+//        ARouter.debuggable();
+        ARouter.openLog();     // 打印日志
+        ARouter.openDebug();     // 打印日志
+        ARouter.init(this);
         initX5();
     }
 

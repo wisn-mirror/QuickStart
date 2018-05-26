@@ -22,7 +22,7 @@ public class OrderFragment extends CommonFragment{
     }
 
     @Override
-    public void requestData() {
+    public void initData() {
 
     }
 }

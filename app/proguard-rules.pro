@@ -308,16 +308,3 @@ public void xxxxxx(**);
 #X5 内核
 -dontwarn com.tencent.smtt.**
 -keep public class com.tencent.smtt.**{*;}
-
-#activityrouter
-#-keep class com.github.mzule.activityrouter.router.** { *; }
-#multistateview
-#-keep class com.kennyc.view.** { *; }
-#-dontwarn com.kennyc.view.*
-# banner 的混淆代码
-#-keep class com.youth.banner.** {
-#    *;
-# }
-#recyclerview-animators
-#-keep class jp.wasabeef.** {*;}
-#-dontwarn jp.wasabeef.*

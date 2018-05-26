@@ -1,4 +1,4 @@
-package com.laiyifen.library.net.https;
+package com.laiyifen.library.https;
 
 
 import com.laiyifen.library.net.utils.NetLog;

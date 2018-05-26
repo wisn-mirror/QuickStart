@@ -1,16 +1,19 @@
 package com.laiyifen.library.commons.mvp;
 
-import com.laiyifen.library.rx.RxManager;
+
+import com.laiyifen.library.rerx.rx.RxManager;
 
 /**
  * Created by Wisn on 2018/4/2 下午1:29.
  */
 
-public abstract class BasePresenter<T> {
+public abstract class BasePresenter<E, T> {
+    public E mModel;
     public T mView;
     private RxManager rxManager;
 
-    public void setV( T view) {
+    public void setMV(E model, T view) {
+        this.mModel = model;
         this.mView = view;
     }
 
@@ -31,5 +34,4 @@ public abstract class BasePresenter<T> {
             rxManager = null;
         }
     }
-
 }

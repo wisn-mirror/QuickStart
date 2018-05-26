@@ -44,7 +44,7 @@ public class GlideUtil {
     private static RequestOptions getRequestOptions() {
         if (options == null) {
             synchronized (GlideUtil.class) {
-                if (options != null) {
+                if (options == null) {
                     options = new RequestOptions()
                             .centerCrop()
                             .placeholder(R.drawable.replactimage)

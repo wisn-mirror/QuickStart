@@ -23,7 +23,7 @@ public class ShopCartFragment extends CommonFragment{
     }
 
     @Override
-    public void requestData() {
+    public void initData() {
 
     }
 }

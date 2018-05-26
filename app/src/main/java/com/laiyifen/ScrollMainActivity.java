@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.RadioGroup;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.laiyifen.adapter.MainPagerAdapter;
+import com.laiyifen.library.adapter.MFragmentPagerAdapter;
 import com.laiyifen.library.commons.common.CommonActivity;
 import com.laiyifen.library.commons.constants.ARoutePath;
 import com.laiyifen.library.view.tipview.TipRadioButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class ScrollMainActivity extends CommonActivity implements View.OnClickLi
     private RadioGroup rg_main_bottom;
     private ViewPager vp_centerlayout;
     private TipRadioButton rb_homepage, rb_merchandise, rb_shopcart, rb_mine;
-    private MainPagerAdapter fragmentPagerAdapter;
+    private MFragmentPagerAdapter fragmentPagerAdapter;
 
 
     @Override
@@ -43,7 +44,7 @@ public class ScrollMainActivity extends CommonActivity implements View.OnClickLi
         pages.add(ARoutePath.merchandise.MerchandiseFragment);
         pages.add(ARoutePath.shopcart.ShopCartFragment);
         pages.add(ARoutePath.mine.MineFragment);
-        fragmentPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), pages);
+        fragmentPagerAdapter = new MFragmentPagerAdapter(getSupportFragmentManager(), pages);
         vp_centerlayout.setAdapter(fragmentPagerAdapter);
         vp_centerlayout.addOnPageChangeListener(this);
     }

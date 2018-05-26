@@ -5,11 +5,11 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.laiyifen.library.Interceptor.HttpLoggingInterceptor;
+import com.laiyifen.library.https.HttpsUtils;
 import com.laiyifen.library.net.cache.CacheEntity;
 import com.laiyifen.library.net.cache.CacheMode;
 import com.laiyifen.library.net.cookie.CookieJarImpl;
-import com.laiyifen.library.net.https.HttpsUtils;
-import com.laiyifen.library.net.interceptor.HttpLoggingInterceptor;
 import com.laiyifen.library.net.model.HttpHeaders;
 import com.laiyifen.library.net.model.HttpParams;
 import com.laiyifen.library.net.request.DeleteRequest;

@@ -41,7 +41,8 @@ public class MainActivity extends CommonActivity implements View.OnClickListener
 
     @Override
     public void initData(Context context) {
-
+        ARouter.getInstance().build(ARoutePath.App.ScrollMainActivity)
+                .navigation();
     }
 
     @Override

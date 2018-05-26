@@ -22,7 +22,7 @@ public class MineFragment extends CommonFragment{
     }
 
     @Override
-    public void requestData() {
+    public void initData() {
 
     }
 }

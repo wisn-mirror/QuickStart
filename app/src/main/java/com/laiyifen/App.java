@@ -1,8 +1,7 @@
 package com.laiyifen;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.laiyifen.library.base.BaseApplication;
-import com.laiyifen.library.utils.Utils;
+import com.laiyifen.library.commons.constants.Config;
 import com.tencent.bugly.crashreport.CrashReport;
 
 /**
@@ -15,12 +14,11 @@ public class App extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         CrashReport.initCrashReport(getApplicationContext(), "8c212d3996", false);
-        Utils.init(this);
-//        ARouter.debuggable();
-        ARouter.openLog();     // 打印日志
-        ARouter.openDebug();     // 打印日志
-        ARouter.init(this);
-
-
+        initConfig();
     }
+
+    private void initConfig() {
+        Config.BASE_URL="https://api.douban.com/";
+    }
+
 }
