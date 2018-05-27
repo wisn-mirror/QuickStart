@@ -43,7 +43,6 @@ dependencies {
     compile thirdDependencies.glide
     compile thirdDependencies.okhttp
     compile thirdDependencies.gson
-    compile thirdDependencies.rxjava
     compile thirdDependencies.arouter
     compile thirdDependencies.rxjava
     compile thirdDependencies.rxandroid
@@ -51,6 +50,7 @@ dependencies {
     compile thirdDependencies.gsonConverter
     compile thirdDependencies.rxjavaAdapter
     compile thirdDependencies.cymchad
+    compile thirdDependencies.eventbus
 //    annotationProcessor thirdDependencies.arouter_compiler
     compile files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604_sharewithdownload_withoutGame_obfs_20180211_105126.jar')
 }

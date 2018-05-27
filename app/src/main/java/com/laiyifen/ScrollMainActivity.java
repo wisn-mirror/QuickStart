@@ -2,6 +2,8 @@ package com.laiyifen;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -10,7 +12,13 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.laiyifen.library.adapter.MFragmentPagerAdapter;
 import com.laiyifen.library.commons.common.CommonActivity;
 import com.laiyifen.library.commons.constants.ARoutePath;
+import com.laiyifen.library.event.BaseEvent;
+import com.laiyifen.library.utils.ToastUtils;
 import com.laiyifen.library.view.tipview.TipRadioButton;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +30,18 @@ public class ScrollMainActivity extends CommonActivity implements View.OnClickLi
     private ViewPager vp_centerlayout;
     private TipRadioButton rb_homepage, rb_merchandise, rb_shopcart, rb_mine;
     private MFragmentPagerAdapter fragmentPagerAdapter;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
+
+    }
+
+    @Override
+    public void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
 
 
     @Override
@@ -49,6 +69,31 @@ public class ScrollMainActivity extends CommonActivity implements View.OnClickLi
         vp_centerlayout.addOnPageChangeListener(this);
     }
 
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void tipMessage(BaseEvent<Integer> event) {
+        ToastUtils.show(event.toString());
+        switch (event.data) {
+            case 0:
+                if (event.type == -1) rb_homepage.setTip();
+                else rb_homepage.setTipText(event.msg);
+                break;
+            case 1:
+                if (event.type == -1) rb_merchandise.setTip();
+                else rb_merchandise.setTipText(event.msg);
+                break;
+            case 2:
+                if (event.type == -1) rb_shopcart.setTip();
+                else rb_shopcart.setTipText(event.msg);
+                break;
+            case 3:
+                if (event.type == -1) rb_mine.setTip();
+                else rb_mine.setTipText(event.msg);
+                break;
+            default:
+                break;
+        }
+    }
     @Override
     public void initData(Context context) {
 

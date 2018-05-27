@@ -9,6 +9,9 @@ import com.laiyifen.homepager.model.HomeModelImpl;
 import com.laiyifen.homepager.presenter.HomePresenter;
 import com.laiyifen.library.commons.common.CommonFragment;
 import com.laiyifen.library.commons.constants.ARoutePath;
+import com.laiyifen.library.event.BaseEvent;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by Wisn on 2018/5/14 下午3:07.
@@ -60,10 +63,12 @@ public class HomeFragment extends CommonFragment<HomeModelImpl, HomePresenter> i
     public void onClick(View v) {
         if (v == loadmore) {
             ((HomePresenter) mPresenter).loadMoreMovies(2);
-
+            BaseEvent<Integer> baseEvent=new BaseEvent<>(-1,"",1);
+            EventBus.getDefault().post(baseEvent);
         } else if (v == refresh) {
             ((HomePresenter) mPresenter).refreshMovies(2);
-
+            BaseEvent<Integer> baseEvent=new BaseEvent<>(1,"39",1);
+            EventBus.getDefault().post(baseEvent);
         }
     }
 

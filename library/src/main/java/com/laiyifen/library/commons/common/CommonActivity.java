@@ -28,7 +28,7 @@ public abstract class CommonActivity <T extends BaseModel, E extends BasePresent
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         if (mPresenter != null) mPresenter.onDestroy();
+        super.onDestroy();
     }
 }
